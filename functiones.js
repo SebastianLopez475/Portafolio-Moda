@@ -38,30 +38,27 @@ const projectsData = [
             "images/Project_4_1.png",
             "images/Project_4_2.png"
         ],
-        palette: ["#0a0908", "#4a121a", "#c5a059"],
-        materials: "Terciopelo de seda, tul ilusion, encaje chantilly, ballenas de acero."
+        palette: ["#555a36", "#3b3d22"],
     },
     {
-        title: "Sombras de Borgoña",
-        category: "Avant-Garde • Experimental",
-        description: "Una exploración volumétrica sobre la silueta femenina. Utiliza técnicas de drapeado directo sobre maniquí y superposición de capas en tonos borgoña y vinos profundos.",
+        title: "Uniforme escolar",
+        category: "Personal",
+        description: "Diseño de uniforme de escolta escuela.",
         images: [
             "images/Project_5_1.png",
             "images/Project_5_2.png"
         ],
-        palette: ["#4a121a", "#121110", "#9e473b"],
-        materials: "Cuero teñido artesanalmente, raso pesado, organza de seda."
+        palette: ["#000000", "#c5a059", "#4a121a"],
     },
     {
-        title: "Elegía Botánica",
-        category: "Prêt-à-Porter Premium",
-        description: "Línea caracterizada por abrigos de corte sastreado y solapas amplias. Una oda a las tonalidades sepia, tierras y ocres con acabados metálicos.",
+        title: "Lampir",
+        category: "Escolar",
+        description: "Vestido azul.",
         images: [
             "images/Project_6_1.png",
             "images/Project_6_2.png"
         ],
-        palette: ["#d8cbb9", "#8c8275", "#c5a059"],
-        materials: "Paño de lana 100%, lino rústico, forros en viscosa impresos."
+        palette: ["#8faec4", "#e2e8f0", "#5b7e98"],
     }
 ];
 
