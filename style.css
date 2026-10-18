@@ -1,0 +1,83 @@
+        /* Estilos personalizados para la atmósfera dramática del Moodboard */
+        body {
+            background-color: #0a0908;
+            color: #d8cbb9;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar estética */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0908;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a121a;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c5a059;
+        }
+
+        /* Filtros de imagen estilo cinematográfico */
+        .mood-img {
+            filter: grayscale(25%) contrast(110%) sepia(15%);
+            transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .mood-img:hover {
+            filter: grayscale(0%) contrast(105%) sepia(0%);
+            transform: scale(1.04);
+        }
+
+        /* Overlay con viñeta estilo editorial */
+        .vignette-overlay {
+            background: radial-gradient(circle, rgba(10, 9, 8, 0.2) 0%, rgba(10, 9, 8, 0.85) 100%);
+        }
+
+        /* Borde dorado sutil en hover */
+        .gold-border-hover {
+            position: relative;
+        }
+
+        .gold-border-hover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            transition: border-color 0.4s ease;
+            pointer-events: none;
+        }
+
+        .gold-border-hover:hover::after {
+            border-color: rgba(197, 160, 89, 0.4);
+        }
+
+        /* Efecto de marco flotante */
+        .editorial-frame {
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 8px;
+            background: rgba(18, 17, 16, 0.6);
+        }
+
+        /* Animación suave para modales */
+        .modal-animate {
+            animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }

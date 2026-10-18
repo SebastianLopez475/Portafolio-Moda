@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier Editorial | Portafolio de Diseño de Modas</title>
+
+    <!-- ARCHIVO CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mood-black': '#0a0908',
+                        'mood-dark': '#121110',
+                        'mood-card': '#181615',
+                        'mood-burgundy': '#4a121a',
+                        'mood-burgundy-light': '#6b1d28',
+                        'mood-terracotta': '#9e473b',
+                        'mood-gold': '#c5a059',
+                        'mood-beige': '#d8cbb9',
+                        'mood-muted': '#8c8275'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="selection:bg-mood-burgundy selection:text-mood-beige">
+
+    <!-- Navegación Encabezado -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-mood-black/80 backdrop-blur-md border-b border-mood-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Signature -->
+            <a href="#hero" class="font-serif text-2xl tracking-widest text-mood-beige hover:text-mood-gold transition-colors duration-300">
+                A L E X A N D R A <span class="italic text-mood-gold text-lg font-light">V A L D É S</span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex space-x-8 text-xs tracking-widest uppercase font-light">
+                <a href="#about" class="hover:text-mood-gold transition-colors duration-300 py-1 border-b border-transparent hover:border-mood-gold">¿Quién soy?</a>
+                <a href="#services" class="hover:text-mood-gold transition-colors duration-300 py-1 border-b border-transparent hover:border-mood-gold">¿Qué hago?</a>
+                <a href="#cv" class="hover:text-mood-gold transition-colors duration-300 py-1 border-b border-transparent hover:border-mood-gold">CV</a>
+                <a href="#projects" class="hover:text-mood-gold transition-colors duration-300 py-1 border-b border-transparent hover:border-mood-gold">Proyectos</a>
+                <a href="#tech-specs" class="hover:text-mood-gold transition-colors duration-300 py-1 border-b border-transparent hover:border-mood-gold">Fichas Técnicas</a>
+                <a href="#contact" class="hover:text-mood-gold transition-colors duration-300 py-1 border-b border-transparent hover:border-mood-gold">Contacto</a>
+            </nav>
+
+            <!-- Botón Menú Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-mood-beige hover:text-mood-gold focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Mobile desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-mood-dark border-b border-mood-gold/20 px-6 py-6 space-y-4 text-center tracking-widest uppercase text-xs">
+            <a href="#about" class="block py-2 hover:text-mood-gold transition-colors mobile-link">¿Quién soy?</a>
+            <a href="#services" class="block py-2 hover:text-mood-gold transition-colors mobile-link">¿Qué hago?</a>
+            <a href="#cv" class="block py-2 hover:text-mood-gold transition-colors mobile-link">CV</a>
+            <a href="#projects" class="block py-2 hover:text-mood-gold transition-colors mobile-link">Proyectos</a>
+            <a href="#tech-specs" class="block py-2 hover:text-mood-gold transition-colors mobile-link">Fichas Técnicas</a>
+            <a href="#contact" class="block py-2 hover:text-mood-gold transition-colors mobile-link">Contacto</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Portada Dramática / Moodboard style) -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Fondo conceptual con textura e imagen sutil -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=80" alt="Fashion Mood" class="w-full h-full object-cover opacity-20 filter grayscale contrast-125">
+            <div class="absolute inset-0 vignette-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <span class="text-xs uppercase tracking-[0.4em] text-mood-gold/80 block mb-4 font-light">Diseño de Modas & Dirección Creativa</span>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-mood-beige font-normal tracking-wide leading-tight mb-6">
+                Poética Visual <br> <span class="italic font-light text-mood-terracotta">&</span> Alta Costura
+            </h1>
+            <p class="max-w-xl mx-auto font-light text-sm md:text-base text-mood-beige/70 tracking-wide leading-relaxed mb-10">
+                Explorando la melancolía, el dramatismo textil y la belleza de lo imperfecto a través del patrón vanguardista y siluetas conceptuales.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 bg-mood-burgundy hover:bg-mood-burgundy-light text-mood-beige text-xs uppercase tracking-widest transition-all duration-300 border border-mood-burgundy-light">
+                    Ver Colecciones
+                </a>
+                <a href="#tech-specs" class="w-full sm:w-auto px-8 py-3.5 border border-mood-gold/40 hover:border-mood-gold text-mood-beige hover:text-mood-gold text-xs uppercase tracking-widest transition-all duration-300 bg-mood-black/40 backdrop-blur-sm">
+                    Fichas Técnicas
+                </a>
+            </div>
+        </div>
+
+        <!-- Indicador Scroll -->
+        <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-mood-gold/60 hover:text-mood-gold transition-colors duration-300 flex flex-col items-center gap-2">
+            <span class="text-[10px] tracking-[0.3em] uppercase">Explorar</span>
+            <i class="fa-solid fa-chevron-down text-xs animate-bounce"></i>
+        </a>
+    </section>
+
+    <!-- MOODBOARD COMPOSITION SHOWCASE -->
+    <section class="py-12 bg-mood-dark border-y border-mood-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center opacity-80">
+                <div class="editorial-frame overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" class="w-full h-48 md:h-64 object-cover mood-img" alt="Editorial Look 1">
+                </div>
+                <div class="editorial-frame overflow-hidden md:-translate-y-4">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" class="w-full h-48 md:h-72 object-cover mood-img" alt="Textura Tela">
+                </div>
+                <div class="editorial-frame overflow-hidden md:translate-y-4">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" class="w-full h-48 md:h-72 object-cover mood-img" alt="Alta Costura Detalle">
+                </div>
+                <div class="editorial-frame overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" class="w-full h-48 md:h-64 object-cover mood-img" alt="Editorial Look 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ¿QUIÉN SOY? -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Imagen Portada Personal / Concepto -->
+                <div class="lg:col-span-5 relative">
+                    <div class="editorial-frame relative z-10">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Diseñadora Alexandra Valdés" class="w-full h-[480px] object-cover mood-img">
+                    </div>
+                    <!-- Elemento Decorativo Fondo -->
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border border-mood-burgundy/60 z-0 hidden sm:block"></div>
+                </div>
+
+                <!-- Texto Biografía -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs uppercase tracking-[0.3em] text-mood-gold">Manifiesto & Identidad</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-mood-beige font-normal leading-tight">
+                        "La moda no es solo vestimenta; es una narrativa viva sobre la piel."
+                    </h2>
+                    <div class="space-y-4 text-mood-beige/80 text-sm leading-relaxed font-light">
+                        <p>
+                            Soy estudiante avanzada de Diseño de Modas apasionada por la intersección entre el romanticismo oscuro, la sastrería clásica y la deconstrucción textil. Mi trabajo surge de una profunda fascinación por el cine de época, las flores en decadencia, el encaje artesanal y las siluetas dramáticas.
+                        </p>
+                        <p>
+                            Entiendo cada colección como un universo poético único. Mi proceso combina la experimentación física sobre el maniquí con un riguroso desarrollo técnico en fichas y patronaje, buscando siempre un equilibrio impecable entre el concepto artístico vanguardista y la viabilidad técnica.
+                        </p>
+                    </div>
+
+                    <!-- Paleta de color del concepto personal -->
+                    <div class="pt-6 border-t border-mood-gold/20">
+                        <span class="text-[11px] uppercase tracking-widest text-mood-muted block mb-3">ADN Cromático de Diseño</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-mood-black border border-mood-gold/30" title="Negro Absoluto"></div>
+                            <div class="w-8 h-8 rounded-full bg-mood-burgundy border border-mood-gold/30" title="Borgoña Dramático"></div>
+                            <div class="w-8 h-8 rounded-full bg-mood-terracotta border border-mood-gold/30" title="Terracota Sepia"></div>
+                            <div class="w-8 h-8 rounded-full bg-mood-gold border border-mood-gold/30" title="Dorado Antiguo"></div>
+                            <div class="w-8 h-8 rounded-full bg-mood-beige border border-mood-gold/30" title="Beige Tiza"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ¿QUÉ HAGO? (DISCIPLINAS Y SERVICIOS) -->
+    <section id="services" class="py-24 bg-mood-dark relative border-t border-mood-gold/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-mood-gold block mb-2">Especialidades</span>
+                <h2 class="font-serif text-4xl text-mood-beige">Disciplinas & Competencias</h2>
+                <div class="w-12 h-[1px] bg-mood-gold/50 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Disciplina 1 -->
+                <div class="bg-mood-card p-8 border border-mood-gold/10 hover:border-mood-gold/40 transition-all duration-300 group">
+                    <div class="text-mood-gold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-[#4a121a] fa-scissors text-mood-gold"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-mood-beige mb-3">Diseño & Concepto</h3>
+                    <p class="text-xs text-mood-beige/70 leading-relaxed font-light">
+                        Desarrollo de tableros de inspiración (moodboards), concepto editorial, investigación de tendencias y dirección creativa de colecciones.
+                    </p>
+                </div>
+
+                <!-- Disciplina 2 -->
+                <div class="bg-mood-card p-8 border border-mood-gold/10 hover:border-mood-gold/40 transition-all duration-300 group">
+                    <div class="text-mood-gold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-mood-beige mb-3">Ilustración de Moda</h3>
+                    <p class="text-xs text-mood-beige/70 leading-relaxed font-light">
+                        Figurines digitales y análogos, renderizado de texturas (encaje, terciopelo, cuero) y figurines de estilismo técnico.
+                    </p>
+                </div>
+
+                <!-- Disciplina 3 -->
+                <div class="bg-mood-card p-8 border border-mood-gold/10 hover:border-mood-gold/40 transition-all duration-300 group">
+                    <div class="text-mood-gold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-mood-beige mb-3">Patronaje & Moulage</h3>
+                    <p class="text-xs text-mood-beige/70 leading-relaxed font-light">
+                        Patronaje plano, escalado de tallas y modelado sobre maniquí (moulage) para vestuario de gala y alta costura.
+                    </p>
+                </div>
+
+                <!-- Disciplina 4 -->
+                <div class="bg-mood-card p-8 border border-mood-gold/10 hover:border-mood-gold/40 transition-all duration-300 group">
+                    <div class="text-mood-gold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-mood-beige mb-3">Fichas Técnicas</h3>
+                    <p class="text-xs text-mood-beige/70 leading-relaxed font-light">
+                        Documentación técnica exhaustiva para producción: despiece, geometral plano, cuadro de medidas y especificación textil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CV & TRAYECTORIA -->
+    <section id="cv" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 border-b border-mood-gold/20 pb-8">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-mood-gold block mb-2">Trayectoria</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-mood-beige">Curriculum Vitae</h2>
+                </div>
+                <!-- Botón Descarga CV MOCK -->
+                <button onclick="downloadCV()" class="px-6 py-2.5 border border-mood-gold text-mood-gold hover:bg-mood-gold hover:text-mood-black text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> Descargar CV (PDF)
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Columna Formación y Experiencia -->
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="font-serif text-2xl text-mood-gold mb-6 border-b border-mood-gold/20 pb-2">Formación Académica</h3>
+                        <div class="space-y-6">
+                            <div class="relative pl-6 border-l border-mood-burgundy">
+                                <span class="text-[10px] tracking-widest text-mood-muted uppercase">2022 - Presente</span>
+                                <h4 class="font-serif text-xl text-mood-beige">Licenciatura en Diseño de Modas</h4>
+                                <p class="text-xs text-mood-beige/70">Universidad de Arte & Diseño de Moda</p>
+                                <p class="text-xs text-mood-muted mt-1">Especialidad en Indumentaria de Gala y Dirección Artística.</p>
+                            </div>
+                            <div class="relative pl-6 border-l border-mood-burgundy">
+                                <span class="text-[10px] tracking-widest text-mood-muted uppercase">2023 (6 meses)</span>
+                                <h4 class="font-serif text-xl text-mood-beige">Diplomado en Alta Sastrería & Corsetería</h4>
+                                <p class="text-xs text-mood-beige/70">Atelier de Sastrería Artesanal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-2xl text-mood-gold mb-6 border-b border-mood-gold/20 pb-2">Experiencia & Proyectos</h3>
+                        <div class="space-y-6">
+                            <div class="relative pl-6 border-l border-mood-burgundy">
+                                <span class="text-[10px] tracking-widest text-mood-muted uppercase">2024</span>
+                                <h4 class="font-serif text-xl text-mood-beige">Asistente de Vestuario & Styling</h4>
+                                <p class="text-xs text-mood-beige/70">Editorial de Moda "Nocturne Magazine"</p>
+                                <p class="text-xs text-mood-muted mt-1">Colaboración en estilismo y selección textil para sesión fotográfica temática.</p>
+                            </div>
+                            <div class="relative pl-6 border-l border-mood-burgundy">
+                                <span class="text-[10px] tracking-widest text-mood-muted uppercase">2023</span>
+                                <h4 class="font-serif text-xl text-mood-beige">Pasarela Académica Anual</h4>
+                                <p class="text-xs text-mood-beige/70">Primer Lugar - Categoría Avant-Garde</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Habilidades Técnicas y Software -->
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="font-serif text-2xl text-mood-gold mb-6 border-b border-mood-gold/20 pb-2">Software de Diseño</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-mood-beige">Adobe Illustrator (Geometrales/Fichas)</span>
+                                    <span class="text-mood-gold">95%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-mood-card">
+                                    <div class="h-full bg-mood-burgundy" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-mood-beige">Adobe Photoshop (Ilustración & Moodboards)</span>
+                                    <span class="text-mood-gold">90%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-mood-card">
+                                    <div class="h-full bg-mood-burgundy" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-mood-beige">CLO 3D / Optitex (Simulación Digital)</span>
+                                    <span class="text-mood-gold">75%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-mood-card">
+                                    <div class="h-full bg-mood-burgundy" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-mood-beige">InDesign (Portafolios & Fichas)</span>
+                                    <span class="text-mood-gold">85%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-mood-card">
+                                    <div class="h-full bg-mood-burgundy" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-2xl text-mood-gold mb-6 border-b border-mood-gold/20 pb-2">Destrezas Técnicas</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-mood-card border border-mood-gold/20 text-xs text-mood-beige">Corsetería Técnica</span>
+                            <span class="px-3 py-1.5 bg-mood-card border border-mood-gold/20 text-xs text-mood-beige">Confección de Gala</span>
+                            <span class="px-3 py-1.5 bg-mood-card border border-mood-gold/20 text-xs text-mood-beige">Bordado en Pedrería</span>
+                            <span class="px-3 py-1.5 bg-mood-card border border-mood-gold/20 text-xs text-mood-beige">Tintes Naturales</span>
+                            <span class="px-3 py-1.5 bg-mood-card border border-mood-gold/20 text-xs text-mood-beige">Sastrería Masculina/Femenina</span>
+                            <span class="px-3 py-1.5 bg-mood-card border border-mood-gold/20 text-xs text-mood-beige">Fichas de Insumos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PROYECTOS / GALERÍA INTERACTIVA -->
+    <section id="projects" class="py-24 bg-mood-dark border-t border-mood-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-[0.3em] text-mood-gold block mb-2">Colecciones</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-mood-beige">Proyectos Seleccionados</h2>
+                <div class="w-12 h-[1px] bg-mood-gold/50 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Filtros de Categoría -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 text-xs uppercase tracking-widest">
+                <button class="filter-btn active text-mood-gold border-b-2 border-mood-gold pb-1 px-2" data-filter="all">Todos</button>
+                <button class="filter-btn text-mood-muted hover:text-mood-beige border-b-2 border-transparent pb-1 px-2 transition-colors" data-filter="alta-costura">Alta Costura</button>
+                <button class="filter-btn text-mood-muted hover:text-mood-beige border-b-2 border-transparent pb-1 px-2 transition-colors" data-filter="avant-garde">Avant-Garde</button>
+                <button class="filter-btn text-mood-muted hover:text-mood-beige border-b-2 border-transparent pb-1 px-2 transition-colors" data-filter="pret-a-porter">Prêt-à-Porter</button>
+            </div>
+
+            <!-- Grid de Proyectos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Proyecto 1 -->
+                <div class="project-card group cursor-pointer" data-category="alta-costura" onclick="openProjectModal(0)">
+                    <div class="editorial-frame relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Colección Nocturna" class="w-full h-96 object-cover mood-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mood-black via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-xs uppercase tracking-widest text-mood-gold flex items-center gap-2">
+                                Explora Colección <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest text-mood-terracotta">Alta Costura • Otoño/Invierno</span>
+                    <h3 class="font-serif text-2xl text-mood-beige group-hover:text-mood-gold transition-colors">Ophelia Nocturna</h3>
+                    <p class="text-xs text-mood-beige/60 font-light mt-1">Sastrería dramática con aplicaciones de encaje y sedas teñidas.</p>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card group cursor-pointer" data-category="avant-garde" onclick="openProjectModal(1)">
+                    <div class="editorial-frame relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Sombras de Borgoña" class="w-full h-96 object-cover mood-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mood-black via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-xs uppercase tracking-widest text-mood-gold flex items-center gap-2">
+                                Explora Colección <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest text-mood-terracotta">Avant-Garde • Experimental</span>
+                    <h3 class="font-serif text-2xl text-mood-beige group-hover:text-mood-gold transition-colors">Sombras de Borgoña</h3>
+                    <p class="text-xs text-mood-beige/60 font-light mt-1">Corsetería desestructurada y texturas en terciopelo quemado.</p>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card group cursor-pointer" data-category="pret-a-porter" onclick="openProjectModal(2)">
+                    <div class="editorial-frame relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Elegía Botánica" class="w-full h-96 object-cover mood-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mood-black via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-xs uppercase tracking-widest text-mood-gold flex items-center gap-2">
+                                Explora Colección <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest text-mood-terracotta">Prêt-à-Porter Premium</span>
+                    <h3 class="font-serif text-2xl text-mood-beige group-hover:text-mood-gold transition-colors">Elegía Botánica</h3>
+                    <p class="text-xs text-mood-beige/60 font-light mt-1">Capas de lino, brocados y siluetas fluidas de inspiración sepia.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FICHAS TÉCNICAS (DOCUMENTACIÓN TÉCNICA) -->
+    <section id="tech-specs" class="py-24 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-mood-gold block mb-2">Ingeniería del Diseño</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-mood-beige">Fichas Técnicas & Especificaciones</h2>
+                <p class="text-xs text-mood-beige/70 font-light mt-2">Desglose técnico de geometrales planos, insumos, muestrario textil y cuadros de medidas para confección.</p>
+                <div class="w-12 h-[1px] bg-mood-gold/50 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Visor interactivo de Fichas Técnicas -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-mood-card border border-mood-gold/20 p-6 md:p-10">
+                <!-- Selector de prendas de la ficha -->
+                <div class="lg:col-span-4 space-y-3">
+                    <span class="text-[11px] uppercase tracking-widest text-mood-gold font-light block mb-2">Selecciona un Diseño:</span>
+                    
+                    <button onclick="loadTechSpec(0)" class="tech-spec-tab w-full text-left p-4 border border-mood-gold/30 bg-mood-black/50 hover:border-mood-gold transition-all active-spec" id="spec-tab-0">
+                        <div class="text-xs uppercase tracking-widest text-mood-terracotta mb-1">Ref: FT-2024-01</div>
+                        <div class="font-serif text-lg text-mood-beige">Corsé Victoriano Desestructurado</div>
+                    </button>
+
+                    <button onclick="loadTechSpec(1)" class="tech-spec-tab w-full text-left p-4 border border-mood-gold/10 bg-mood-black/30 hover:border-mood-gold transition-all" id="spec-tab-1">
+                        <div class="text-xs uppercase tracking-widest text-mood-terracotta mb-1">Ref: FT-2024-02</div>
+                        <div class="font-serif text-lg text-mood-beige">Saco Editorial con Solapa Drapeada</div>
+                    </button>
+
+                    <button onclick="loadTechSpec(2)" class="tech-spec-tab w-full text-left p-4 border border-mood-gold/10 bg-mood-black/30 hover:border-mood-gold transition-all" id="spec-tab-2">
+                        <div class="text-xs uppercase tracking-widest text-mood-terracotta mb-1">Ref: FT-2024-03</div>
+                        <div class="font-serif text-lg text-mood-beige">Vestido Evassé en Terciopelo Devoré</div>
+                    </button>
+                </div>
+
+                <!-- Panel de Detalles de la Ficha Técnica Seleccionada -->
+                <div class="lg:col-span-8 bg-mood-black p-6 border border-mood-gold/10 relative" id="tech-spec-display">
+                    <!-- Contenido dinámico inyectado por JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTACTO -->
+    <section id="contact" class="py-24 bg-mood-dark border-t border-mood-gold/10 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.3em] text-mood-gold block mb-2">Contacto & Colaboraciones</span>
+                <h2 class="font-serif text-4xl text-mood-beige">Iniciemos una Conversación</h2>
+                <p class="text-xs text-mood-beige/70 font-light mt-2">Para proyectos editoriales, diseño sobre medida o contrataciones.</p>
+            </div>
+
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6 bg-mood-card p-8 border border-mood-gold/20">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-mood-gold mb-2">Nombre Completo</label>
+                        <input type="text" required class="w-full bg-mood-black border border-mood-gold/20 px-4 py-3 text-xs text-mood-beige focus:border-mood-gold focus:outline-none transition-colors" placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-mood-gold mb-2">Correo Electrónico</label>
+                        <input type="email" required class="w-full bg-mood-black border border-mood-gold/20 px-4 py-3 text-xs text-mood-beige focus:border-mood-gold focus:outline-none transition-colors" placeholder="ejemplo@correo.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-mood-gold mb-2">Asunto / Tipo de Proyecto</label>
+                    <select class="w-full bg-mood-black border border-mood-gold/20 px-4 py-3 text-xs text-mood-beige focus:border-mood-gold focus:outline-none transition-colors">
+                        <option>Diseño sobre medida / Gala</option>
+                        <option>Dirección Creativa / Styling</option>
+                        <option>Elaboración de Fichas Técnicas</option>
+                        <option>Oportunidad Laboral / Internship</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-mood-gold mb-2">Mensaje</label>
+                    <textarea rows="4" required class="w-full bg-mood-black border border-mood-gold/20 px-4 py-3 text-xs text-mood-beige focus:border-mood-gold focus:outline-none transition-colors" placeholder="Escribe los detalles de tu consulta..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-mood-burgundy hover:bg-mood-burgundy-light text-mood-beige text-xs uppercase tracking-widest transition-all duration-300 border border-mood-burgundy-light">
+                    Enviar Mensaje Editorial
+                </button>
+            </form>
+
+            <!-- Redes Sociales / Links -->
+            <div class="flex justify-center items-center gap-8 mt-12 text-mood-gold">
+                <a href="#" class="hover:text-mood-beige transition-colors text-lg" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-mood-beige transition-colors text-lg" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-mood-beige transition-colors text-lg" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                <a href="#" class="hover:text-mood-beige transition-colors text-lg" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-mood-black border-t border-mood-gold/10 text-center text-xs text-mood-muted font-light">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Alexandra Valdés — Portafolio de Diseño de Modas.</p>
+            <p class="italic font-serif text-mood-gold/80">"El vestuario como arte atemporal"</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE PROYECTOS INTERACTIVO -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-mood-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-mood-card border border-mood-gold/30 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative modal-animate">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-mood-gold hover:text-mood-beige text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content" class="space-y-6">
+                <!-- Inyectado mediante JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN TIPO TOAST EN LUGAR DE ALERT() -->
+    <div id="toast-message" class="fixed bottom-6 right-6 bg-mood-burgundy border border-mood-gold text-mood-beige px-6 py-4 text-xs uppercase tracking-widest hidden z-50 shadow-xl">
+        <span id="toast-text">Mensaje enviado con éxito</span>
+    </div>
+
+    <!-- ARCHIVO JAVASCRIPT -->
+    <script src="functiones.js"></script>
+</body>
+</html>
