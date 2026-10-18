@@ -1,12 +1,42 @@
 // Datos de proyectos para el modal interactivo
 const projectsData = [
     {
-        title: "Ophelia Nocturna",
-        category: "Alta Costura • Otoño/Invierno",
-        description: "Colección inspirada en el romanticismo oscuro y la botánica en decadencia. Incorpora corsetería de la era victoriana con estructuras desestructuradas en lana virgen y encaje bordado a mano.",
+        title: "Pasarela colaboración Élite | Victoria Secret",
+        category: "Escolares",
+        description: "Diseño de lencería en encaje azul y bata fluida",
         images: [
-            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80"
+            "images/Project_1.png",
+            "images/Project_1_1.png"
+        ],
+        palette: ["#6085a6", "#ffffff"],
+    },
+    {
+        title: "La Madrina",
+        category: "Temática",
+        description: "Vestido de gala negro con flores artesanales de cempasúchil",
+        images: [
+            "images/Project_2_1.png",
+            "images/Project_2_2.png"
+        ],
+        palette: ["#0a0908", "#e07a10"],
+    },
+    {
+        title: "Senzul",
+        category: "Escolares",
+        description: "Vestido azul",
+        images: [
+            "images/Project_3_1.png",
+            "images/Project_3_2.png"
+        ],
+        palette: ["#9bb3d3", "#d8cbb9"],
+    },
+    {
+        title: "Titlán",
+        category: "Alta Costura • Cultura Mesoamericana",
+        description: "Estructura corsetada y faldón escultórico tono verde olivo metálico",
+        images: [
+            "images/Project_4_1.png",
+            "images/Project_4_2.png"
         ],
         palette: ["#0a0908", "#4a121a", "#c5a059"],
         materials: "Terciopelo de seda, tul ilusion, encaje chantilly, ballenas de acero."
@@ -16,8 +46,8 @@ const projectsData = [
         category: "Avant-Garde • Experimental",
         description: "Una exploración volumétrica sobre la silueta femenina. Utiliza técnicas de drapeado directo sobre maniquí y superposición de capas en tonos borgoña y vinos profundos.",
         images: [
-            "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80"
+            "images/Project_5_1.png",
+            "images/Project_5_2.png"
         ],
         palette: ["#4a121a", "#121110", "#9e473b"],
         materials: "Cuero teñido artesanalmente, raso pesado, organza de seda."
@@ -27,8 +57,8 @@ const projectsData = [
         category: "Prêt-à-Porter Premium",
         description: "Línea caracterizada por abrigos de corte sastreado y solapas amplias. Una oda a las tonalidades sepia, tierras y ocres con acabados metálicos.",
         images: [
-            "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+            "images/Project_6_1.png",
+            "images/Project_6_2.png"
         ],
         palette: ["#d8cbb9", "#8c8275", "#c5a059"],
         materials: "Paño de lana 100%, lino rústico, forros en viscosa impresos."
@@ -97,9 +127,9 @@ filterBtns.forEach(btn => {
 
         projectCards.forEach(card => {
             if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                card.style.display = 'block';
+                card.style.display = ''; // Restablece el display original para integrarse a la rejilla de Tailwind
             } else {
-                card.style.display = 'none';
+                card.style.display = 'none'; // Oculta los elementos no seleccionados
             }
         });
     });
@@ -120,14 +150,10 @@ function openProjectModal(index) {
                 <p class="text-xs text-mood-beige/80 leading-relaxed font-light">${data.description}</p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    ${data.images.map(img => `<img src="${img}" class="w-full h-64 object-cover border border-mood-gold/20">`).join('')}
+                    ${data.images.map(img => `<img src="${img}" class="w-full h-80 object-contain bg-mood-black/60 border border-mood-gold/20">`).join('')}
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-4 border-t border-mood-gold/10">
-                    <div>
-                        <span class="text-mood-gold uppercase tracking-widest block mb-1">Textiles & Materiales:</span>
-                        <p class="text-mood-beige/70 font-light">${data.materials}</p>
-                    </div>
                     <div>
                         <span class="text-mood-gold uppercase tracking-widest block mb-1">Paleta de Color:</span>
                         <div class="flex gap-2 mt-1">
