@@ -65,33 +65,41 @@ const projectsData = [
 // Datos de Fichas Técnicas
 const techSpecsData = [
     {
-        ref: "FT-2024-01",
-        name: "Corsé Victoriano Desestructurado",
-        fabric: "Terciopelo Algodón 100% / Forro Entretela Rígida",
-        colorway: "Negro Óxido / Borgoña Profundo",
-        hardware: "Ojalillos de latón envejecido, varillas de espiral 6mm, cordón de satén.",
-        stitches: "Puntada recta 2.5mm / Carga interna de costura",
-        flatSketch: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80"
+        flatSketch: "images/technical_sheet_1.png"
     },
     {
-        ref: "FT-2024-02",
-        name: "Saco Editorial Solapa Drapeada",
-        fabric: "Paño de Lana Virgeb 450g / Forro de Raso de Viscosa",
-        colorway: "Marrón Sepia / Terracota",
-        hardware: "Botón de asta natural 28mm, hombreras de sastrería.",
-        stitches: "Puntada invisible en ruedo, hilván de picado en solapa",
-        flatSketch: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80"
+        flatSketch: "images/technical_sheet_2_!.png"
     },
     {
-        ref: "FT-2024-03",
-        name: "Vestido Evassé Terciopelo Devoré",
-        fabric: "Seda Devoré Motivo Floral / Tul de Poliamida",
-        colorway: "Vino Tinto / Dorado Antiguo",
-        hardware: "Cierre invisible de 50cm, broche de gancho metálico.",
-        stitches: "Costura francesa 5mm, dobladillo pañuelo",
-        flatSketch: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80"
+        flatSketch: "images/technical_sheet_3.png"
+    },
+    {
+        flatSketch: "images/technical_sheet_4.png"
     }
 ];
+
+// Función para cargar ficha técnica
+function loadTechSpec(index) {
+    const spec = techSpecsData[index];
+
+    // Actualizar estado visual de los tabs
+    document.querySelectorAll(".tech-spec-tab").forEach(tab => {
+        tab.classList.remove("active-spec");
+    });
+    document.getElementById(`spec-tab-${index}`).classList.add("active-spec");
+
+    // Inyectar solo la imagen en el panel
+    const display = document.getElementById("tech-spec-display");
+    display.innerHTML = `
+        <img src="${spec.flatSketch}" 
+             alt="Sketch ${index}" 
+             class="w-full border border-mood-gold/20">`;
+}
+
+// Cargar primera ficha por defecto al iniciar
+window.addEventListener('DOMContentLoaded', () => {
+    loadTechSpec(0);
+});
 
 // Menu Mobile Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -170,64 +178,6 @@ function closeProjectModal() {
     modal.classList.remove('flex');
 }
 
-// Carga Dinámica de Ficha Técnica
-function loadTechSpec(index) {
-    const spec = techSpecsData[index];
-    const display = document.getElementById('tech-spec-display');
-
-    // Actualizar clase activa en pestañas
-    document.querySelectorAll('.tech-spec-tab').forEach((tab, i) => {
-        if (i === index) {
-            tab.classList.add('border-mood-gold', 'bg-mood-black/50');
-            tab.classList.remove('border-mood-gold/10', 'bg-mood-black/30');
-        } else {
-            tab.classList.remove('border-mood-gold', 'bg-mood-black/50');
-            tab.classList.add('border-mood-gold/10', 'bg-mood-black/30');
-        }
-    });
-
-    display.innerHTML = `
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-mood-gold/20 pb-4 mb-6 gap-2">
-                    <div>
-                        <span class="text-[10px] tracking-widest text-mood-gold uppercase">Ficha Técnica Oficial</span>
-                        <h3 class="font-serif text-2xl text-mood-beige">${spec.name}</h3>
-                    </div>
-                    <span class="px-3 py-1 bg-mood-burgundy/40 border border-mood-burgundy text-mood-beige text-[11px] uppercase tracking-widest">${spec.ref}</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                    <div class="space-y-4 text-xs">
-                        <div>
-                            <span class="text-mood-gold block uppercase tracking-widest mb-0.5">Tejido Principal:</span>
-                            <p class="text-mood-beige/80 font-light">${spec.fabric}</p>
-                        </div>
-                        <div>
-                            <span class="text-mood-gold block uppercase tracking-widest mb-0.5">Variación Cromática:</span>
-                            <p class="text-mood-beige/80 font-light">${spec.colorway}</p>
-                        </div>
-                        <div>
-                            <span class="text-mood-gold block uppercase tracking-widest mb-0.5">Insumos & Avíos:</span>
-                            <p class="text-mood-beige/80 font-light">${spec.hardware}</p>
-                        </div>
-                        <div>
-                            <span class="text-mood-gold block uppercase tracking-widest mb-0.5">Costuras & Acabados:</span>
-                            <p class="text-mood-beige/80 font-light">${spec.stitches}</p>
-                        </div>
-                    </div>
-
-                    <div class="editorial-frame">
-                        <span class="text-[10px] text-mood-muted uppercase tracking-widest block mb-2 text-center">Geometral / Muestra Textil</span>
-                        <img src="${spec.flatSketch}" alt="Geometral Plano" class="w-full h-48 object-cover border border-mood-gold/10">
-                    </div>
-                </div>
-            `;
-}
-
-// Cargar primera ficha por defecto al iniciar
-window.addEventListener('DOMContentLoaded', () => {
-    loadTechSpec(0);
-});
-
 // Toast Notificación
 function showToast(text) {
     const toast = document.getElementById('toast-message');
@@ -246,5 +196,9 @@ function handleFormSubmit(e) {
 }
 
 function downloadCV() {
-    showToast("Iniciando descarga del CV en PDF...");
+    showToast("Descargando CV en PDF...");
+    const link = document.createElement("a");
+    link.href = "documents/Documento A4 Curriculum Vitae minimalistabeige blanco negro.pdf"; // Ajusta la ruta
+    link.download = "Curriculum_Vitae.pdf"; // Nombre del archivo al descargar
+    link.click();
 }
